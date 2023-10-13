@@ -1,0 +1,222 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #c92a2a;
+    color: white;
+    padding: 10px;
+}
+
+/* Container for content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form styles */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Buttons */
+button {
+    background-color: #c92a2a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #a61c1c;
+}
+
+/* Links */
+a {
+    color: #c92a2a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background color for the whole page */
+body {
+    background-color: #f3f3f3;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header/logo area */
+.header {
+    text-align: center;
+    background-color: #d9534f;
+    padding: 20px 0;
+}
+
+.header img {
+    width: 200px;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: #31708f;
+}
+
+.navbar {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Style the overview section */
+.overview {
+    max-width: 960px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overview h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overview p {
+    font-size: 16px;
+    color: #555;
+}
+
+.overview-image img {
+    width: 100%;
+}
+
+/* Style the user options section */
+.user-options {
+    max-width: 960px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.user-options h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buttons a:hover {
+    background-color: #c9302c;
+}
+
+.user-options p {
+    font-size: 16px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .overview {
+        flex-direction: column;
+    }
+
+    .overview-image img {
+        margin-top: 20px;
+    }
+}
