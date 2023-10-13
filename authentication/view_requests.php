@@ -21,8 +21,9 @@ try {
 
     // Retrieve the list of requests for the logged-in hospital
     $hospitalId = $_SESSION['user_id'];
-    $sql = "SELECT r.receiver_name, r.blood_group, r.status, r.request_date
-            FROM BloodRequests r
+    $sql = "SELECT r.receiver_id, r.blood_group, r.status, r.request_date, rc.name AS receiver_name
+            FROM bloodrequests r
+            INNER JOIN receivers rc ON r.receiver_id = rc.receiver_id
             WHERE r.hospital_id = :hospitalId";
 
     $stmt = $conn->prepare($sql);
@@ -36,7 +37,7 @@ try {
 }
 
 // Include the header for your HTML
-include('includes/header.php');
+// include('includes/header.php');
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +46,21 @@ include('includes/header.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Requests</title>
-    <!-- Include your CSS file for styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Basic CSS styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <h2>View Requests</h2>
@@ -73,5 +87,5 @@ include('includes/header.php');
 
 <?php
 // Include the footer for your HTML
-include('includes/footer.php');
+// include('includes/footer.php');
 ?>
