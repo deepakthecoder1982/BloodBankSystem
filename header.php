@@ -1,24 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Hospital Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&family=Montserrat:wght@500;700;900&family=Open+Sans&family=Oswald:wght@200;300;400;600&family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,400;1,500&family=Raleway:ital,wght@1,900&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- <style>
-        body {
-            font-family: sans-serif;
-            background: #f4f4f4;
-            text-align: center;
-        }
-
-        h1 {
-            color: dodgerblue;
-            font-size: 28px;
-            margin: 1rem auto;
-            font-weight: bold;
-        }
-    </style>
     <style>
         * {
             margin: 0;
@@ -43,6 +32,7 @@
 
         /* Sticky Navbar with Box Shadow */
 
+        /* User Info and Logout Button */
         .user-info {
             display: none;
         }
@@ -64,6 +54,113 @@
             border-radius: 5px;
             padding: 5px 10px;
             cursor: pointer;
+        }
+
+        /* Overview section */
+        .overview {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            width: 90%;
+            margin: 2vw auto;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* .overview:hover {
+            transform: scale(1.01);
+        } */
+
+
+        .overview-text {
+            width: 50%;
+        }
+
+        .overview-text h2 {
+            font-size: 1.9rem;
+            color: #a80000;
+            margin-bottom: 10px;
+        }
+
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            padding: 0px 6px;
+            color: var(--font-color);
+
+        }
+
+        /* User options section */
+        .user-options {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            width: 90%;
+            margin: 2vw auto;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .user-options h2 {
+            font-size: 24px;
+            color: #a80000;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 80%;
+            margin: auto;
+        }
+
+        .buttons .sign-hospital,
+        .buttons .sign-receiver {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin: .6rem auto;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            transition: all .3s ease-in-out;
+        }
+
+        .buttons .sign-hospital:hover,
+        .buttons .sign-receiver:hover {
+            transform: scale(1.07);
+        }
+
+        .buttons .sign-receiver img {
+            width: 70%;
+        }
+
+        .buttons .sign-hospital img {
+            width: 70%;
+        }
+
+        .user-options .buttons .btn {
+            text-decoration: none;
+            background-color: #a80000;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .user-options .buttons .btn:hover {
+            background-color: transparent;
+            color: black;
+            outline: .01rem solid;
         }
 
         /* Footer section */
@@ -98,9 +195,7 @@
 
         .copyright {
             color: #f9f1f182;
-            margin: 1rem 0 .2rem;
-            position: relative;
-            bottom: 0;
+            margin: 1rem 0;
         }
 
         .navbar {
@@ -228,166 +323,46 @@
             outline: .01rem solid;
             color: black;
         }
-
-        .container {
-            width: 82%;
-            margin: 1rem auto;
-            /* background-color: rgba(255, 255, 255, 0.55); */
-            border-radius: 30px;
-            padding: 20px;
-        }
-
-        .container h3 {
-            color: #a80000;
-            font-size: 2.2rem;
-            margin: 0;
-            padding: 10px 20px;
-            background-color: #005b8b;
-            width: 50%;
-            margin: auto;
-            color: wheat;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        }
-
-        .form-container {
-            background-color: rgba(0, 0, 0, 0.2);
-            background-color: rgba(255, 255, 255, 0.75);
-            opacity: .9;
+        .user-name {
             width: 100%;
-            height: 100%;
-            display: flex;
-            margin: 2rem auto;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-        }
-
-        .form-container img {
-            width: 100%;
-            height: 100%;
-            border-top-left-radius: .5rem;
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: 4px;
-            border-top-right-radius: 4px;
-            object-fit: contain;
-        }
-
-        form {
-            border-radius: 5px;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-            padding: 0 30px;
-            max-width: 400px;
-            margin: 1rem .5rem;
-        }
-
-
-        .form-container form {
-            min-width: 35%;
-            height: 100%;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            margin-top: 10px;
-            text-align: left;
-            font-size: 1.1rem;
-            /* color: whitesmoke; */
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 6px;
-            background-color: #eff8ff;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            border: 1px solid;
+            text-transform:capitalize;
+            padding: 4px 8px;
+            border-radius:6px ;
+            background: dodgerblue;
             border: none;
-            font-size: 1rem;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="password"]:focus,
-        select:focus {
-            outline: none;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-            outline: 1px solid blueviolet;
-        }
-
-        input[type="text"]:active,
-        input[type="email"]:active,
-        input[type="password"]:active,
-        select:active {
-            outline: 1px solid blue;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-        }
-
-        input[type="submit"] {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 18px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        }
-
-        .login-link {
-            padding: 8px 20px;
-            background-color: #a80000;
-            width: 100%;
-            text-decoration: none;
             color: white;
-            border: none;
-            border-radius: 6px;
-            margin: 1rem auto;
         }
-
-        .or {
-            font-size: 1.5rem;
+        /* .user-name::first-letter{
             font-weight: bold;
-            font-family: Montreat;
-            margin: 1rem;
-        }
+            color: white;
+            position: absolute;
+            top: 10px;
 
-        input[type="submit"]:hover {
-            background-color: #005b8b;
-        }
-    </style> -->
-    <link rel="stylesheet" href="registeration.css">
+        } */
+    </style>
+
 </head>
 
 <body>
+    <!-- Navbar -->
     <div class="navbar">
         <div class="nav-logo">
-            <a href="../../index.php" style="text-decoration:none;">
-                <img src="../../images/logo-main.png" id="logo-img">
+            <a href="./index.php" style="text-decoration:none;">
+                <img src="./images/logo-main.png" id="logo-img">
                 <span>Blood Bank</span>
             </a>
         </div>
         <div class="nav-items">
             <ul>
-                <li><a href="./authentication/request_sample.php">Blood Samples</a></li>
+                <li><a href="./authentication/request.php">Blood Samples</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
 
                 <?php if (isset($_SESSION["user_type"])) : ?>
                     <!-- Display User Name and Logout Button when logged in -->
                     <div class="user-info" id="user-info">
-                        <span class="user-name"><?php echo $_SESSION["user_id"] ?></span>
+                        <span class="user-name"><?php echo $_SESSION["user_name"];?></span>
                         <button class="logout-button" id="logout-button">Logout</button>
                     </div>
                 <?php else : ?>
@@ -398,44 +373,3 @@
 
         </div>
     </div>
-    <div class="container">
-        <h3>Hospital Registration</h3>
-        <div class="form-container">
-
-            <img src="../../images/image_head3.jpg" alt="" width="100%">
-            <form method="post" action="process_registeration.php">
-                <label for="name">Hospital Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Enter the hospital name...">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Enter the hospital email...">
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required placeholder="Enter the hospital Password">
-
-                <input type="submit" value="Register">
-                <p class="or">Or</p>
-                <span>Aready have an account?</span> <a class="login-link" href="../login/login.php">Login</a>
-            </form>
-        </div>
-    </div>
-    <!-- <p>OR</p>
-        <div class="sigUpAsReciver">
-            <span>Are you a new user? </span> <a href="./reciver_registeration.php">Register as Blood Receiver</a>
-        </div> -->
-    <footer>
-        <div class="footer">
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Download on Play Store</a></li>
-                <li><a href="#">Download on App Store</a></li>
-            </ul>
-            <div class="copyright">
-                <p>Blood-Bank-System © 2023</p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>

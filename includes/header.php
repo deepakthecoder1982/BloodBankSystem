@@ -323,6 +323,23 @@
             outline: .01rem solid;
             color: black;
         }
+        .user-name {
+            width: 100%;
+            border: 1px solid;
+            text-transform:capitalize;
+            padding: 4px 8px;
+            border-radius:6px ;
+            background: dodgerblue;
+            border: none;
+            color: white;
+        }
+        /* .user-name::first-letter{
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 10px;
+
+        } */
     </style>
 
 </head>
@@ -331,8 +348,8 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="nav-logo">
-            <a href="./index.php" style="text-decoration:none;">
-                <img src="../im" id="logo-img">
+            <a href="../index.php" style="text-decoration:none;">
+                <img src="../images/logo-main.png" id="logo-img">
                 <span>Blood Bank</span>
             </a>
         </div>
@@ -345,7 +362,7 @@
                 <?php if (isset($_SESSION["user_type"])) : ?>
                     <!-- Display User Name and Logout Button when logged in -->
                     <div class="user-info" id="user-info">
-                        <span class="user-name">User Name</span>
+                        <span class="user-name"><?php echo $_SESSION["user_name"];?></span>
                         <button class="logout-button" id="logout-button">Logout</button>
                     </div>
                 <?php else : ?>

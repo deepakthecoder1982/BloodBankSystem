@@ -20,7 +20,7 @@ $user_name = $_SESSION["user_name"];
     <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Poppins, sans-serif;
             background: linear-gradient(to bottom, #f5f5f5, #ececec);
             text-align: center;
             margin: 0;
@@ -33,7 +33,7 @@ $user_name = $_SESSION["user_name"];
             margin: 20px 0;
         }
 
-        .container {
+        .receiver-container {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -42,12 +42,12 @@ $user_name = $_SESSION["user_name"];
             margin: 20px auto;
         }
 
-        p {
+        .receiver-container > p {
             font-size: 18px;
             color: #333;
         }
 
-        a {
+       .receiver-container > a {
             display: block;
             background-color: #0058a2;
             color: #fff;
@@ -62,12 +62,12 @@ $user_name = $_SESSION["user_name"];
             max-width: 200px;
         }
 
-        a:hover {
+       .receiver-container > a:hover {
             background-color: #003c70;
         }
 
         /* Apply glassmorphism effect */
-        .container {
+        .receiver-container{
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
         }
@@ -76,7 +76,7 @@ $user_name = $_SESSION["user_name"];
 <body>
     <?php include("../includes/header.php"); ?>
     
-    <div class="container">
+    <div class="receiver-container">
         <h1>Welcome, <?php echo $user_name; ?>!</h1>
         <p>This is your reciver dashboard.</p>
         <a href="./request_sample.php">Request Sample</a>

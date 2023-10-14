@@ -11,10 +11,10 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if (!isset($_SESSION['user_id'])) {
-        header('Location: login.php');
-        exit();
-    }
+    // if (!isset($_SESSION['user_id'])) {
+    //     header('Location: login.php');
+    //     exit();
+    // }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
@@ -37,7 +37,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Blood Samples</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -78,7 +78,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php
         if ($_SESSION['user_type'] === 'receiver') {
-            echo 'a {
+            echo ' table td a {
                 text-decoration: none;
                 background-color: #0058a2;
                 color: #fff;
@@ -89,7 +89,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 transition: background-color 0.3s;
             }
             
-            a:hover {
+            table td a:hover {
                 background-color: #003c70;
             }';
         }
@@ -99,6 +99,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+    <?php include("../includes/header.php")?>
     <h1>Available Blood Samples</h1>
 
     <table>
@@ -128,8 +129,10 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $serialNo++;
         }
         ?>
-        <?php echo $_SESSION["user_type"]?>
+        <!-- <?php echo $_SESSION["user_type"]?> -->
     </table>
-</body>
 
+    <?php include("../includes/footer.php")?>
+</body>
+        
 </html>

@@ -20,6 +20,7 @@ if (isset($_SESSION["user_type"])) {
 </head>
 
 <body>
+    <?php include("../../includes/header.php") ?>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -53,7 +54,7 @@ if (isset($_SESSION["user_type"])) {
             </div>
         </div>
     </div>
-
+    <?php include("../../includes/footer.php") ?>
     <!-- Link to Bootstrap JS and jQuery (if needed) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -63,6 +64,7 @@ if (isset($_SESSION["user_type"])) {
     // document.getElementById("login-form").addEventListener("submit", (e)=>{
     //     e.preventDefault();
     // })
+
 </script>
 
 </html>
