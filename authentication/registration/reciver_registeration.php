@@ -91,6 +91,8 @@
         </select>
 
         <input type="submit" value="Register">
+        <p>Or</p>
+        <a href="../login/login.php">Login</a>
     </form>
     <p>OR</p>
     <div class="sigUpAsReciver">
