@@ -4,11 +4,14 @@ A platform where blood reciver can request for blood and hospitals can add blood
 ## Homepage of platform
 ![Alt text](image-1.png)
 
-## the two sign in options
+## Registeration options for Reciever and Hospital
 ![Alt text](image.png)
 
-## the registeration page
+## Registeration page for Hospital
 ![Alt text](image-2.png)
 
-## the Available bLood Sample page
+## Registeration page for Reciever
+![Alt text](image-4.png)
+
+## the Available blood Sample page
 ![Alt text](image-3.png)
