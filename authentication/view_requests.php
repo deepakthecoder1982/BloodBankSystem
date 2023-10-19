@@ -46,6 +46,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Requests</title>
+    <?php include("../includes/header.php")?>
     <style>
         /* Basic CSS styling */
         table {
@@ -59,6 +60,38 @@ try {
         }
         th {
             background-color: #f2f2f2;
+        }
+        h2 {
+            color: #0058a2;
+            font-size: 28px;
+            margin: 10px auto;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0058a2;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
         }
     </style>
 </head>
@@ -82,10 +115,9 @@ try {
         }
         ?>
     </table>
+<?php
+include('../includes/footer.php');
+?>
 </body>
 </html>
 
-<?php
-// Include the footer for your HTML
-// include('includes/footer.php');
-?>

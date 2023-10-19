@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Perform server-side validation (you can add more validation as needed)
     if (empty($email) || empty($password)) {
         $_SESSION["error_message"] = "Email and password are required.";
-        header("Location: login.php"); // Replace with your actual login page
+        header("Location: ./login.php"); // Replace with your actual login page
         exit();
     }
 
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If no matching user found, display an error
     $_SESSION["error_message"] = "Invalid email or password.";
-    header("Location: ./login.php"); // Replace with your actual login page
+    header("Location: http://localhost/bloodbanksysteminternshala/authentication/login/login.php"); // Replace with your actual login page
     exit();
 }
 

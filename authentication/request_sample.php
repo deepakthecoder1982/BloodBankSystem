@@ -62,7 +62,8 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px;
             text-align: center;
         }
@@ -78,7 +79,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php
         if ($_SESSION['user_type'] === 'receiver') {
-            echo ' table td a {
+            echo 'table td a {
                 text-decoration: none;
                 background-color: #0058a2;
                 color: #fff;
@@ -94,12 +95,16 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }';
         }
         ?>
-
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #005b8b;
+        }
     </style>
 </head>
 
 <body>
-    <?php include("../includes/header.php")?>
+    <?php include("../includes/header.php") ?>
     <h1>Available Blood Samples</h1>
 
     <table>
@@ -109,7 +114,7 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>Quantity (units)</th>
             <th>Hospital Name</th>
             <?php
-            if ($_SESSION['user_type'] === 'receiver') {
+            if (!isset($_SESSION["user_type"]) || $_SESSION['user_type'] === 'receiver') {
                 echo '<th>Request Sample</th>';
             }
             ?>
@@ -122,17 +127,17 @@ $bloodSamples = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo '<td>' . $sample['blood_group'] . '</td>';
             echo '<td>' . $sample['quantity'] . '</td>';
             echo '<td>' . $sample['hospital_name'] . '</td>';
-            if ($_SESSION['user_type'] === 'receiver') {
+            if (!isset($_SESSION["user_type"]) || $_SESSION['user_type'] === 'receiver') {
                 echo '<td><a href="./process_request_sample.php?sample_id=' . $sample['sample_id'] . '&hospital_id=' . $sample['hospital_id'] . '">Request Sample</a></td>';
             }
             echo '</tr>';
             $serialNo++;
         }
         ?>
-        <!-- <?php echo $_SESSION["user_type"]?> -->
+        <!-- <?php echo $_SESSION["user_type"] ?> -->
     </table>
 
-    <?php include("../includes/footer.php")?>
+    <?php include("../includes/footer.php") ?>
 </body>
-        
+
 </html>

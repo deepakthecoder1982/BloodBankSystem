@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 // Check if the user is logged in as a hospital
 
-if (!isset($_SESSION["user_id"]) || $_SESSION["user_type"] !== "hospital") {
-    header("Location: ../authentication/login.php");
+if (!isset($_SESSION["user_id"]) || !isset($_SESSION["user_name"])  || $_SESSION["user_type"] !== "hospital") {
+    header("Location: ../authentication/login/login.php");  
     exit();
 }
 
@@ -12,10 +11,6 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["user_type"] !== "hospital") {
 $user_name = $_SESSION["user_name"];
 $user_type = $_SESSION["user_type"];
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,22 +21,25 @@ $user_type = $_SESSION["user_type"];
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             padding: 30px;
-            max-width: 400px;
+            max-width: 420px;
             margin: 3rem auto;
+            width: 60%;
         }
-
+        
         .hospital-container>h1 {
             color: #0077b6;
+            text-align: center;
             font-size: 32px;
             margin-bottom: 20px;
         }
-
+        
         .hospital-container>p {
+            text-align: center;
             font-size: 18px;
             color: #333;
             margin-bottom: 30px;
         }
-
+        
         .hospital-container>a {
             display: block;
             background-color: #0077b6;
@@ -64,16 +62,15 @@ $user_type = $_SESSION["user_type"];
         }
 
         footer {
-            position: relative;
+            position: absolute;
             bottom: 0;
             background-color: #005b8b;
         }
-    </style>
-    <?php include "../includes/header.php" ?>
+        </style>
 </head>
+<?php include "../includes/header.php" ?>
 
-<body>
-    <div class="hospital-container">
+<div class="hospital-container">
         <h1>Welcome, <?php echo $user_name; ?>!</h1>
         <p>This is your hospital dashboard.</p>
         <!-- Add hospital-specific content here -->
@@ -82,6 +79,3 @@ $user_type = $_SESSION["user_type"];
         <a href="./request_sample.php">Available Blood Samples</a>
     </div>
     <?php include "../includes/footer.php" ?>
-</body>
-
-</html>

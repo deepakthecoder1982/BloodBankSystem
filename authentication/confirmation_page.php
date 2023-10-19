@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css"> <!-- Include your CSS file -->
     <title>Confirmation</title>
+    <?php include "../includes/header.php"?>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +19,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 50vh;
         }
 
         .confirmation {
@@ -55,6 +56,10 @@
         .btn:hover {
             background-color: #45a049;
         }
+        footer{
+            position: absolute;
+            bottom: 0;
+        }
     </style>
 </head>
 
@@ -68,5 +73,5 @@
         </div>
     </div>
 </body>
-
+<?php include "../includes/footer.php"?>
 </html>

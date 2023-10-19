@@ -13,6 +13,7 @@ $user_name = $_SESSION["user_name"];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,15 +40,15 @@ $user_name = $_SESSION["user_name"];
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 3rem auto 0;
         }
 
-        .receiver-container > p {
+        .receiver-container>p {
             font-size: 18px;
             color: #333;
         }
 
-       .receiver-container > a {
+        .receiver-container>a {
             display: block;
             background-color: #0058a2;
             color: #fff;
@@ -62,20 +63,27 @@ $user_name = $_SESSION["user_name"];
             max-width: 200px;
         }
 
-       .receiver-container > a:hover {
+        .receiver-container>a:hover {
             background-color: #003c70;
         }
 
         /* Apply glassmorphism effect */
-        .receiver-container{
+        .receiver-container {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
         }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #005b8b;
+        }
     </style>
 </head>
+
 <body>
     <?php include("../includes/header.php"); ?>
-    
+
     <div class="receiver-container">
         <h1>Welcome, <?php echo $user_name; ?>!</h1>
         <p>This is your reciver dashboard.</p>
@@ -86,4 +94,5 @@ $user_name = $_SESSION["user_name"];
 
     <?php include("../includes/footer.php"); ?>
 </body>
+
 </html>

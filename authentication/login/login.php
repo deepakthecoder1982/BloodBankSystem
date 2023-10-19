@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+// echo $_SESSION["user_id"];
+// echo "</br>";
+// echo $_SESSION["user_type"];
+// echo "</br>";
+// echo $_SESSION["user_name"];
+
 if (isset($_SESSION["user_type"])) {
     if (isset($_SESSION["user_type"]) === "hospital") {
         header("Location: ../hospital_dashboard.php");
@@ -17,10 +24,36 @@ if (isset($_SESSION["user_type"])) {
     <title>Login</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
+<?php include("../../includes/header.php") ?>
+<style>
+    .login-button:hover {
+        background-color: white;
+        color: black;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    }
+
+    form {
+        position: relative;
+    }
+
+    .login-button {
+        width: 20%;
+        text-align: center;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+
+</style>
 
 <body>
-    <?php include("../../includes/header.php") ?>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -47,7 +80,7 @@ if (isset($_SESSION["user_type"])) {
                                     <option value="receiver">Receiver</option>
                                 </select>
                             </div> -->
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class=" login-button btn btn-primary">Login</button>
                         </form>
                     </div>
                 </div>
@@ -64,7 +97,6 @@ if (isset($_SESSION["user_type"])) {
     // document.getElementById("login-form").addEventListener("submit", (e)=>{
     //     e.preventDefault();
     // })
-
 </script>
 
 </html>

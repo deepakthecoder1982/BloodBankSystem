@@ -123,6 +123,7 @@ try {
         .hide-for-hospital {
             display: none;
         }
+        
     </style>
 </head>
 <body>
